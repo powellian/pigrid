@@ -1,0 +1,33 @@
+/*
+	Common global settings - can include global variables.
+*/
+
+// Set variables:
+$common-size_scss: 30px;	// scss var until I can get css-vars to do math/calc() on padding etc.
+
+// otherwise, css vars:
+:root{
+	--common-size: 30px;
+}
+
+// Maps:
+$mapHeadings: (
+	h1: 28,
+	h2: 21,
+	h3: 20,
+	h4: 18,
+	h5: 16,
+	h6: 14
+);
+
+// Breakpoints - ref: http://screensiz.es
+$mapBreakpoints: (
+	zero: 0,
+	mobMini: 220px,
+	mobMin: 320px,
+	mobMax: 640px,
+	tabletMin: 768px,
+	tabletMax: 1024px,
+	deskMin: 1240px,
+	deskMax: 1440px,
+);

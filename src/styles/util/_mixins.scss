@@ -1,0 +1,143 @@
+/* Media queries ============================
+*/
+// My tweak to this: https://itnext.io/writing-media-queries-with-sass-mixins-3ea591ea3ea4
+// My addition: mapping and camelCasing.
+// example: @include pigrPoint(mobMaxUp) { ... }
+@mixin pigrPoint($size) {
+  @if $size == mobMaxUp {
+      @media (min-width: 0) and (max-width: map-get($map: $mapBreakpoints, $key: mobMax)) { @content; }
+  } @else if $size == tabletMinUp {
+      @media (min-width: map-get($map: $mapBreakpoints, $key: tabletMin)) { @content; }
+  } @else if $size == tabletMaxUp {
+      @media (min-width: map-get($map: $mapBreakpoints, $key: tabletMax)) { @content; }
+  } @else if $size == deskMinUp {
+      @media (min-width: map-get($map: $mapBreakpoints, $key: deskMin)) { @content; }
+  } @else if $size == deskMaxUp {
+      @media (min-width: map-get($map: $mapBreakpoints, $key: deskMax)) { @content; }
+  }
+}
+
+// https://thoughtbot.com/blog/sass-content-directive
+// https://sass-lang.com/documentation/at-rules/mixin#content-blocks
+@mixin media($width) {
+  @media only screen and (min-width: map-get($map: $mapBreakpoints, $key: $width)) {
+    @content;
+  }
+}
+// example (use with the breakpoints map):
+@include media(mobMin) {
+  // background: red;
+}
+
+/* e.g.: @include transition(all,2s,ease-out); ============================
+*/
+@mixin transition($what: all, $duration: 0.1s, $ease: ease-in-out) {
+  transition: $what $duration $ease;
+}
+
+/* Structural ============================
+*/
+// Define display mode:
+@mixin displayMode ($GridOrFlex) {
+	display: $GridOrFlex;
+	display: -ms-#{ $GridOrFlex };
+}
+
+// Add drop/box-shadow - defaults to black with zero blur, both editable params.
+@mixin boxShadow($dropColourLighten: 20, $dropParam: 1px, $blurParam: 0) {
+  box-shadow: lighten($color: #000000, $amount: $dropColourLighten) $dropParam $dropParam $blurParam;
+}
+@mixin blockSpacing($spaceTop, $spaceBottom) {
+  margin-top: $spaceTop;
+  margin-bottom: $spaceBottom;
+}
+@mixin fill-window {
+  width: 100%;
+  height: 100%;
+}
+@mixin fill-viewport {
+  width: 100vw;
+  height: 100vh;
+}
+@mixin stack($attribute, $value) {
+  // https://every-layout.dev/layouts/stack/
+  $attribute: $value;
+}
+// common rounded edges
+@mixin borderRadius($radius: 3) {
+  border-radius: #{$radius}px;
+}
+
+// Typographical utilities (can be applied elswhere as req'd)
+@mixin flattenBase {
+  margin-bottom: 0;
+}
+@mixin zero-down {
+  margin: 0;
+  padding: 0;
+}
+@mixin flat-list {
+  @include zero-down;
+  list-style-type: none;
+}
+@mixin linkCommon($paddLeftRight: 1px) {
+  // line-height: 2;
+  text-decoration: none;
+  padding: 0 $paddLeftRight;
+  color: var(--font-common-red);
+  border-bottom:  solid 1px lighten($color: $colours_common-red, $amount: 45);
+  @include transition;
+  touch-action: manipulation;
+
+  &.active--exact,
+  &:hover, &:active, &:focus {
+    color: white;
+    background: var(--font-common-red);
+    border-bottom:  solid 1px darken($color: $colours_common-red, $amount: 10);
+  }
+}
+
+// Zurb Foundation rem-calc function: https://gist.github.com/kylewebdev/f36acbfd2e9257d88253
+$rem-base: 16px;
+@function strip-unit($num) {
+  @return $num / ($num * 0 + 1);
+}
+@function convert-to-rem($value, $base-value: $rem-base)  {
+  $value: strip-unit($value) / strip-unit($base-value) * 1rem;
+  @if ($value == 0rem) { $value: 0; } // Turn 0rem into 0
+  @return $value;
+}
+@function rem-calc($values, $base-value: $rem-base) {
+  $max: length($values);
+  @if $max == 1 { @return convert-to-rem(nth($values, 1), $base-value); }
+  $remValues: ();
+  @for $i from 1 through $max {
+    $remValues: append($remValues, convert-to-rem(nth($values, $i), $base-value));
+  }
+  @return $remValues;
+}
+
+// Labels for 'pigr example' & 'grid col-span' info (set from ::before/::after))
+// syntax: @mixin cta($ctaName, $vertical, $offset) {
+@mixin cta($ctaName, $offset) {
+  line-height: 1.1;
+  font-size: 80%;
+  position: absolute;
+  top: $offset;
+  left: $offset;
+  padding: 1px 2px;
+  box-shadow: lighten($color: #000000, $amount: 20) 1px 1px 0;
+
+  @if $ctaName == ctaPod {
+    background: lighten($color: $black, $amount: 90);
+    color: $black;
+    text-shadow: white 1px 1px 1px;
+  } @else if $ctaName == ctaTitle {
+    background: $colours_safe-red-hex;
+    color: $white;
+    font-weight: bold;
+    text-shadow: black 1px 1px 1px;
+    padding: 2px 3px;
+    top: calc(#{$offset - 3});
+  }
+}

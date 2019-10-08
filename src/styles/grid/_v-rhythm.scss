@@ -1,0 +1,12 @@
+/*
+*   Set vertical rhythm here, plus other misc spacing bits/bobs
+*/
+
+// This is used for golbal block spacing to achieve consistent vertical rhythm between blocks and other elements, as req'd.
+.v-block {
+	@include blockSpacing(0, var(--common-size));
+
+	@include pigrPoint(tabletMinUp) {
+		@include blockSpacing(0, calc(var(--common-size)*2.5));
+	}
+}
