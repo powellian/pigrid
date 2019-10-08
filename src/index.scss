@@ -33,9 +33,10 @@
 @import './styles/grid/grid';
 @import './styles/grid/v-rhythm';
 
-// Components: scope - multi-site/global (potentially)
+// Components: scope - global
 @import './styles/components/global/global-header';
 @import './styles/components/global/global-footer';
+@import './styles/components/global/main';
 
 // Components: scope - atomic
 // @import './styles/components/atomic/';

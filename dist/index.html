@@ -4,15 +4,17 @@
   <meta charset="UTF-8">
   <title>PiGrid - a CSS Grid / Flexbox system.</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="Description" content="PiGrid - a CSS Grid / Flexbox system. Release #001 - a this is a W.I.P.">
+  <meta name="Description" content="PiGrid - a CSS Grid / Flexbox system.">
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,500&display=swap", rel="stylesheet" />
 
   <!-- Open Graph data / Facebook Card data -->
   <meta property="og:title" content="PiGrid - a CSS Grid / Flexbox system.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://github.com/powellian/pigrid">
-  <meta property="og:image" content="">
-  <meta property="og:image:alt" content="A nice kitten.">
-  <meta property="og:description" content="PiGrid - a CSS Grid / Flexbox system. Release #001 - a this is a W.I.P.">
+  <meta property="og:image" content="https://placekitten.com/408/287">
+  <meta property="og:image:alt" content="A fluffy kitten.">
+  <meta property="og:description" content="PiGrid - a CSS Grid / Flexbox system. Release #01, a W.I.P.">
 
   <!-- Twitter Card data -->
   <meta name="twitter:card" content="summary">
@@ -27,50 +29,46 @@
 <script type="text/javascript" src="main.js" defer></script><script type="text/javascript" src="vendor.js" defer></script><link as="font" crossorigin="anonymous" href="fonts/libre-baskerville-v5-latin-regular.woff" rel="preload"><link as="font" crossorigin="anonymous" href="fonts/libre-baskerville-v5-latin-regular.woff2" rel="preload"></head>
 
 <body>
-
-  <div class="pigr-container pigr-container--midi pigr-example">
-    <header class="pigr-row pigr-row--2 pigr__header">
-      <div class="pigr-pod"><p>Spicy jalapeno bacon ipsum dolor amet landjaeger shoulder filet mignon kielbasa cupim short loin bresaola ribeye sirloin, salami drumstick pork jerky pancetta.</p></div>
-      <div class="pigr-pod"><p>Kielbasa cupim short loin bresaola ribeye sirloin. A Spicy jalapeno bacon ipsum dolor amet landjaeger shoulder filet mignon kielbasa cupim short loin bresaola ribeye sirloin, salami drumstick pork jerky pancetta.</p></div>
-    </header>
-    <div class="pigr-row pigr-row--6">
-      <div class="pigr-pod pigr-pod--4"><p>Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic.</p></div>
-      <div class="pigr-pod pigr-pod--2"><p>Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic.</p></div>
-    </div>
-    <!-- <div class="pigr-row">
-      <div class="pigr-pod"><p>Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic.</p></div>
-    </div> -->
-    <div class="pigr-row pigr-row--6">
-      <div class="pigr-pod pigr-pod--2"><p>Veggies es bonus vobis, proinde vos postulo essum magis.</p></div>
-      <div class="pigr-pod pigr-pod--4">
-        <!-- <h1 class="h4">Nested grid</h1> -->
-        <div class="pigr-row pigr-row--3">
-          <div class="pigr-pod"><p>Chilli Red</p></div>
-          <div class="pigr-pod"><p>Chilli</p></div>
-          <div class="pigr-pod"><p>Chilli</p></div>
-          <div class="pigr-pod"><p>Chilli Green</p></div>
-          <div class="pigr-pod"><p>Chilli</p></div>
-          <div class="pigr-pod"><p>Scotch Bonnet</p></div>
+  <main role="main">
+    <div class="pigr-container pigr-container--midi pigr-example">
+      <header class="pigr-row pigr-row--2 pigr__header">
+        <div class="pigr-pod"><p>Spicy jalapeno bacon ipsum dolor amet landjaeger shoulder filet mignon kielbasa cupim short loin bresaola ribeye sirloin, salami drumstick pork jerky pancetta.</p></div>
+        <div class="pigr-pod"><p>Kielbasa cupim short loin bresaola ribeye sirloin. A Spicy jalapeno bacon ipsum dolor amet landjaeger shoulder filet mignon kielbasa cupim short loin bresaola ribeye sirloin, salami drumstick pork jerky pancetta.</p></div>
+      </header>
+      <div class="pigr-row pigr-row--6">
+        <div class="pigr-pod pigr-pod--4"><p>Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic.</p></div>
+        <div class="pigr-pod pigr-pod--2"><p>Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic.</p></div>
+      </div>
+      <div class="pigr-row pigr-row--6">
+        <div class="pigr-pod pigr-pod--1"><p>Veggies es bonus vobis, proinde vos postulo essum magis.</p></div>
+        <div class="pigr-pod pigr-pod--5">
+          <div class="pigr-row pigr-row--3">
+            <div class="pigr-pod"><p>Chilli Red</p></div>
+            <div class="pigr-pod"><p>Chilli</p></div>
+            <div class="pigr-pod"><p>Chilli</p></div>
+            <div class="pigr-pod"><p>Chilli Green</p></div>
+            <div class="pigr-pod"><p>Chilli</p></div>
+            <div class="pigr-pod"><p>Scotch Bonnet</p></div>
+          </div>
         </div>
       </div>
+      <div class="pigr-row pigr-row--6">
+        <div class="pigr-pod"><p>Chilli Red</p></div>
+        <div class="pigr-pod"><p>Chilli</p></div>
+        <div class="pigr-pod"><p>Chilli</p></div>
+        <div class="pigr-pod"><p>Chilli Green</p></div>
+        <div class="pigr-pod"><p>Chilli</p></div>
+        <div class="pigr-pod"><p>Scotch Bonnet</p></div>
+      </div>
+      <div class="pigr-row">
+        <div class="pigr-pod"><p>Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic.</p></div>
+      </div>
+      <footer class="pigr-row pigr-row--3 pigr__footer">
+        <div class="pigr-pod"><p>A Spicy jalapeno bacon ipsum dolor amet landjaeger shoulder filet mignon kielbasa cupim short loin bresaola ribeye sirloin, salami drumstick pork jerky pancetta.</p></div>
+        <div class="pigr-pod"><p>A Spicy jalapeno bacon ipsum dolor amet landjaeger shoulder filet mignon kielbasa cupim short loin bresaola ribeye sirloin, salami drumstick pork jerky pancetta.</p></div>
+        <div class="pigr-pod"><p>A Spicy jalapeno bacon ipsum dolor amet landjaeger shoulder filet mignon kielbasa cupim short loin bresaola ribeye sirloin, salami drumstick pork jerky pancetta.</p></div>
+      </footer>
     </div>
-    <div class="pigr-row pigr-row--6">
-      <div class="pigr-pod"><p>Chilli Red</p></div>
-      <div class="pigr-pod"><p>Chilli</p></div>
-      <div class="pigr-pod"><p>Chilli</p></div>
-      <div class="pigr-pod"><p>Chilli Green</p></div>
-      <div class="pigr-pod"><p>Chilli</p></div>
-      <div class="pigr-pod"><p>Scotch Bonnet</p></div>
-    </div>
-    <div class="pigr-row">
-      <div class="pigr-pod"><p>Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic.</p></div>
-    </div>
-    <footer class="pigr-row pigr-row--3 pigr__footer">
-      <div class="pigr-pod"><p>A Spicy jalapeno bacon ipsum dolor amet landjaeger shoulder filet mignon kielbasa cupim short loin bresaola ribeye sirloin, salami drumstick pork jerky pancetta.</p></div>
-      <div class="pigr-pod"><p>A Spicy jalapeno bacon ipsum dolor amet landjaeger shoulder filet mignon kielbasa cupim short loin bresaola ribeye sirloin, salami drumstick pork jerky pancetta.</p></div>
-      <div class="pigr-pod"><p>A Spicy jalapeno bacon ipsum dolor amet landjaeger shoulder filet mignon kielbasa cupim short loin bresaola ribeye sirloin, salami drumstick pork jerky pancetta.</p></div>
-    </footer>
-  </div>
-
+  </main>
 </body>
 </html>

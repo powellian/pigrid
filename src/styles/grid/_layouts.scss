@@ -2,18 +2,6 @@
   overflow: auto;
   position: relative;
 
-  // This is for the pseudo elements showing grid span
-  &::before {
-    background: rgba(0,0,0,.50);
-    color: white;
-    font-size: rem-calc(12);
-    padding: 4px 5px;
-    position: absolute;
-    top: 0;
-    left: -2px;
-    @include borderRadius(2);
-  }
-
   // Full width
 	&--full-w {
 		max-width: 100%;

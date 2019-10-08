@@ -17,17 +17,18 @@
   }
 }
 
+// Alt:
 // https://thoughtbot.com/blog/sass-content-directive
 // https://sass-lang.com/documentation/at-rules/mixin#content-blocks
-@mixin media($width) {
-  @media only screen and (min-width: map-get($map: $mapBreakpoints, $key: $width)) {
-    @content;
-  }
-}
+// @mixin media($width) {
+//   @media only screen and (min-width: map-get($map: $mapBreakpoints, $key: $width)) {
+//     @content;
+//   }
+// }
 // example (use with the breakpoints map):
-@include media(mobMin) {
+// @include media(mobMin) {
   // background: red;
-}
+// }
 
 /* e.g.: @include transition(all,2s,ease-out); ============================
 */
@@ -59,13 +60,30 @@
   width: 100vw;
   height: 100vh;
 }
-@mixin stack($attribute, $value) {
-  // https://every-layout.dev/layouts/stack/
-  $attribute: $value;
-}
-// common rounded edges
-@mixin borderRadius($radius: 3) {
-  border-radius: #{$radius}px;
+
+// Labels for 'pigr example' & 'grid col-span' info (set from ::before/::after))
+// syntax: @mixin cta($ctaName, $vertical, $offset) {
+@mixin cta($ctaName, $offset) {
+  line-height: 1.1;
+  font-size: 80%;
+  position: absolute;
+  top: $offset;
+  left: $offset;
+  padding: 1px 2px;
+  box-shadow: lighten($color: #000000, $amount: 20) 1px 1px 0;
+
+  @if $ctaName == ctaPod {
+    background: lighten($color: $black, $amount: 90);
+    color: $black;
+    text-shadow: white 1px 1px 1px;
+  } @else if $ctaName == ctaTitle {
+    background: $colours_safe-red-hex;
+    color: $white;
+    font-weight: bold;
+    text-shadow: black 1px 1px 1px;
+    padding: 2px 3px;
+    top: calc(#{$offset - 3});
+  }
 }
 
 // Typographical utilities (can be applied elswhere as req'd)
@@ -81,7 +99,6 @@
   list-style-type: none;
 }
 @mixin linkCommon($paddLeftRight: 1px) {
-  // line-height: 2;
   text-decoration: none;
   padding: 0 $paddLeftRight;
   color: var(--font-common-red);
@@ -115,29 +132,4 @@ $rem-base: 16px;
     $remValues: append($remValues, convert-to-rem(nth($values, $i), $base-value));
   }
   @return $remValues;
-}
-
-// Labels for 'pigr example' & 'grid col-span' info (set from ::before/::after))
-// syntax: @mixin cta($ctaName, $vertical, $offset) {
-@mixin cta($ctaName, $offset) {
-  line-height: 1.1;
-  font-size: 80%;
-  position: absolute;
-  top: $offset;
-  left: $offset;
-  padding: 1px 2px;
-  box-shadow: lighten($color: #000000, $amount: 20) 1px 1px 0;
-
-  @if $ctaName == ctaPod {
-    background: lighten($color: $black, $amount: 90);
-    color: $black;
-    text-shadow: white 1px 1px 1px;
-  } @else if $ctaName == ctaTitle {
-    background: $colours_safe-red-hex;
-    color: $white;
-    font-weight: bold;
-    text-shadow: black 1px 1px 1px;
-    padding: 2px 3px;
-    top: calc(#{$offset - 3});
-  }
 }
