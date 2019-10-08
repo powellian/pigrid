@@ -1,24 +1,31 @@
 # PiGrid
 
-*What:* a CSS Grid / Flexbox system - [demo](https://powellian.com/pigrid/).
+***What**:* a CSS Grid / Flexbox system - [demo](https://powellian.com/pigrid/).
 
-*How:* a SCSS setup utilising a few loops and settings to generate spans for up to 12 grid-row elements, all nestable, using inline classes.
+***How**:* a SCSS setup utilising a few loops and settings to generate spans for up to 12 grid-row elements, all nestable, using inline classes.
 
-It's inspired by [Foundation](https://foundation.zurb.com/sites/docs/)/[Bootstrap](https://getbootstrap.com/docs/4.3/getting-started/introduction/), but time allowing I'll work on a semantic build method using grid mixins in the style of [Bourbon/Neat](https://neat.bourbon.io/) to negate the inline classes (preferable *imho*).
+It is inspired by [Foundation](https://foundation.zurb.com/sites/docs/)/[Bootstrap](https://getbootstrap.com/docs/4.3/getting-started/introduction/). Time allowing I'll make a semantic mixin library version in the style of [Bourbon/Neat](https://neat.bourbon.io/) to negate the inline classes (preferable *imho*).
 
-The demo uses class `.pigr-example` to apply colour to the rows and grid items (pods); remove that class and it'll be colour-inert. It's moderately opinionated and includes a bunch of mixins and typography settings.
+The demo uses class `.pigr-example` to apply colour to the rows and grid items (pods); remove that class and it'll be colour-inert.
 
-***Caveats:***
-It was tested iteratively while building in all decent modern browsers; Edge 16+ tested intermittently in Browserstack but needs more (in progress), and I'm in the process of testing 'the other one' down to version 10.
+***Tested**:* iteratively in all decent modern browsers from ground-up;
+Edge 16+ tested intermittently in Browserstack, needs more (in progress);
+In the process of testing 'Exploder' down to version 10.
 
-I used Firefox and Chrome device emulators extensively, and hooked up my Samsnug Android to Chrome device debugger and will do the same with an iPhone in Safari. But there been no other testing on 'real' hardware devices.
+Firefox and Chrome device emulators used extensively throughout;
+Chrome/Android device debugger and Safari/iPhone used occasionally;
+No further testing on hardware devices - willdo when kit becomes available.
 
 ## Webpack setup
-For convenience this PiGrid example is built into the brilliant [tris-webpack-boilerplate](https://github.com/tr1s/tris-webpack-boilerplate) for static multi-page web builds. Install the dependencies, fire it up and do what you want.
+For convenience this PiGrid example is built into the brilliant [tris-webpack-boilerplate](https://github.com/tr1s/tris-webpack-boilerplate) for static multi-page web builds.
 
-Here are the steps for build etc:
+The ***PiGrid*** specific files are in:
+- *./src/styles/***
+- *./src/index.html*
 
-You need [git](https://git-scm.com/) and [node.js](https://nodejs.org/) on your computer before running.
+Everything else is related to the webpack build.
+
+You'll need [git](https://git-scm.com/) and [node.js](https://nodejs.org/) on your computer before running, then:
 
 1.  `git clone https://github.com/powellian/pigrid your-project-name`
 
