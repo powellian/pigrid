@@ -20,8 +20,6 @@ Here are the steps for build etc:
 
 You need [git](https://git-scm.com/) and [node.js](https://nodejs.org/) on your computer before running.
 
-
-
 1.  `git clone https://github.com/powellian/pigrid your-project-name`
 
 2.  `cd your-project-name && rm -rf .git`
