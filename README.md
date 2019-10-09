@@ -1,7 +1,7 @@
 # PiGrid  
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/powellian/pigrid)  ![GitHub](https://img.shields.io/github/license/powellian/pigrid)
 
-***What**:*
+***What**:*  
 CSS-Grid/Flexbox grid system - [demo](https://powellian.com/pigrid/).  
 A SCSS setup utilising a few loops and a bunch of settings to generate up to 12 grid-row elements, all nestable, using inline classes.  Utilises [BEM](https://css-tricks.com/bem-101/) throughout.
 
