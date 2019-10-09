@@ -38,6 +38,12 @@
 	display: -ms-#{ $GridOrFlex };
 }
 
+// Flatten things - used for viewport in _layouts.scss
+@mixin zero-down {
+  margin: 0;
+  padding: 0;
+}
+
 // Colouring of elements
 @mixin compColours($compBgColour, $compBgOpacity, $compBorderSize, $compBorderOpacity) {
   background-color: lighten($color: $compBgColour, $amount: $compBgOpacity);
