@@ -17,7 +17,7 @@
   }
 }
 
-// Alt:
+// Alternatively (am running this in):
 // https://thoughtbot.com/blog/sass-content-directive
 // https://sass-lang.com/documentation/at-rules/mixin#content-blocks
 // @mixin media($width) {
@@ -37,10 +37,6 @@
 	display: $GridOrFlex;
 	display: -ms-#{ $GridOrFlex };
 }
-@mixin zero-down {
-  margin: 0;
-  padding: 0;
-}
 
 // Colouring of elements
 @mixin compColours($compBgColour, $compBgOpacity, $compBorderSize, $compBorderOpacity) {
@@ -54,7 +50,7 @@
   // This is being debugged for next version. Used Hex val instead.
   // @include compColours(#{var(--deep-red)}, 50, 5px, 45);
   @include compColours($deep-red, 50, 5px, 45);
-  padding: calc(var(--common-size) - 10) calc(var(--common-size)/2);
+  padding: calc(var(--common-size)/2);
   @include boxShadow();
 }
 

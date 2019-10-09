@@ -7,7 +7,8 @@
 
 @import './styles/base/typography';
 
-// Grid & Layouts
+// PiGrid
+@import './styles/grid/layouts'; // Optional
 @import './styles/grid/grid';
 @import './styles/grid/v-rhythm';
 
@@ -16,4 +17,4 @@
 @import './styles/components/global/global-footer';
 
 // Components: scope - atomic
-// @import './styles/components/atomic/';
+// @import './styles/components/atomic/'; // D.I.Y.
