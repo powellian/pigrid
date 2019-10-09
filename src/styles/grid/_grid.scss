@@ -1,12 +1,11 @@
 /*
-*   Pi Grid aka: pigr
+*   PiGrid - aka: pigr
 */
 
 // Base settings
 $gutter: calc(var(--common-size)/1.25);
 
-// Outer elements - pi-grid and standard - width settings
-.container,
+// Outer container elements - width settings
 .pigr-container {
 	@include displayMode(grid);
 	grid-row-gap: $gutter;
@@ -17,7 +16,7 @@ $gutter: calc(var(--common-size)/1.25);
 
 	// Mapped widths ( see: $mapBreakpoints )
 	&--mini {
-		// for default template (100vh etc) - prevent reducing topnav width:
+		// Mobile-up
 		width: 100%;
 		max-width: map-get($map: $mapBreakpoints, $key: tabletMin);
 	}
@@ -56,10 +55,8 @@ $gutter: calc(var(--common-size)/1.25);
 			@include compColours($black, 90, 5px, 75);
 			@include boxShadow();
 			justify-content: center;
-			padding: $common-size_scss/3;
+			padding: calc(var(--common-size)/3);
 			position: relative;	// this is for the ::before pseudo el's
-
-			p { margin-bottom: 0; }
 
 			// @mixin for example labels top-left
 			@mixin exampleLabels($bgCol: rgba(0,0,0,.45), $textCol: $white) {
@@ -76,7 +73,7 @@ $gutter: calc(var(--common-size)/1.25);
 				@include exampleLabels;
 			}
 
-			// Add labels - defined width e.g. pigr-ROW--X > pigr-POD--Y
+			// Add labels - defined width e.g. pigr-row--X > pigr-pod--Y
 			@for $i from 1 through 12 {
 				&--#{$i} {
 					&::before {
@@ -109,7 +106,7 @@ $gutter: calc(var(--common-size)/1.25);
 
 	@for $i from 1 through 12 {
 		&--#{$i} {
-			// Default mobile-up span full-width
+			// Mobile-up span full-width
 			grid-column: span 1 / auto;
 
 			// Tablet min up ( >768px ):

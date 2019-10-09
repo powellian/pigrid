@@ -2,26 +2,9 @@
 *   Global & PiGr footer settings
 */
 
-.global-footer {
-    @include displayMode(flex);
-    align-content: center;
-    justify-content: flex-end;
-    padding-top: var(--common-size);
-    padding-bottom: calc(var(--common-size)/2);
-    width: 100%;
-
-		@include pigrPoint(tabletMaxUp){
-			width: map-get($map: $mapBreakpoints, $key: tabletMin);	// max-width: 768 (not 96.5%)
-		}
-
-    &--whup {
-        color: lighten(black, 40);
-        font-size: 70%;
-    }
-
-    p { margin-bottom: 0; }
-}
-
 .pigr__footer {
+  .pigr-example & {
     @include HeaderFooterCommon;
+    margin-bottom: 5vh;
+  }
 }

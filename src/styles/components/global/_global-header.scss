@@ -2,49 +2,9 @@
 *   Header settings - Global and for PiGr
 */
 
-.global-header {
-  @include displayMode(flex);
-  flex: 1;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: flex-end;
-  height: 80px;
-  max-height: 80px;
-  margin-bottom: $common-size_scss;
-
-  &__root {
-    font-size: rem-calc(20);
-    text-decoration: none;
-    border: none;
-
-    // prevent red bg on root link/logo
-    &.active--exact {
-      background: none;
-      color: $colours_common-red;
-      border: none;
-    }
-    &:hover {
-      border: none;
-    }
-  }
-}
-
-
-.pigr {
-
-  &__header {
+.pigr__header {
+  .pigr-example & {
     @include HeaderFooterCommon;
-
-    // Refer to parent for misc attrs:
-    @for $i from 1 through 12 {
-      .pigr-example--0#{$i} & {
-        position: relative;
-
-        &::before {
-          @include cta(ctaTitle, -10px);
-          content: 'pigr example: 0#{$i}';
-        }
-      }
-    }
+    margin-top: 5vh;
   }
 }
