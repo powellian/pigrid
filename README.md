@@ -1,11 +1,11 @@
-# PiGrid  
+# PiGrid
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/powellian/pigrid)  ![GitHub](https://img.shields.io/github/license/powellian/pigrid)
 
-***What**:*  
-CSS-Grid/Flexbox grid system - [demo](https://powellian.com/pigrid/).  
+***What**:*
+CSS-Grid/Flexbox grid system - [demo](https://powellian.com/pigrid/).
 A SCSS setup utilising a few loops and a bunch of settings to generate up to 12 grid-row elements, all nestable, using inline classes.  Utilises [BEM](https://css-tricks.com/bem-101/) throughout.
 
-***How**:*  
+***How**:*
 Inspired by [Foundation](https://foundation.zurb.com/sites/docs/)/[Bootstrap](https://getbootstrap.com/docs/4.3/getting-started/introduction/) , PiGrid layout consists of an outer `container`, then `row`, then inner `pod`. Add the relevant classes and the SCSS will automatically apply the layout.
 
 `container` elements can be wrapped around the complete markup or individual blocks; width easily set via class modifiers: `--mini`, `--midi`, `--maxi`.
@@ -15,7 +15,7 @@ The demo uses the `.pigr-example` class to apply colour to the rows and grid ite
 
 Time allowing I'll make a semantic mixin library version in the style of [Bourbon/Neat](https://neat.bourbon.io/) to negate the inline classes (preferable *imho*).
 
-***QA**:*  
+***QA**:*
 Tested iteratively from ground-up in all decent modern browsers, with Firefox and Chrome device emulators used extensively throughout.
 Remote/mobile device testing for [Chrome/Android](https://developers.google.com/web/tools/chrome-devtools/remote-debugging) and [Safari/iPhone](https://www.kenst.com/2019/03/how-to-debug-problems-on-mobile-safari/) used occasionally.
 No testing on 'actual' tablet hardware - will do when kit is available.
@@ -23,7 +23,14 @@ No testing on 'actual' tablet hardware - will do when kit is available.
 Edge 16+ tested intermittently in Browserstack, needs more (in progress);
 In the process of testing 'Exploder' down to version 10.
 
-## Webpack setup  
+## Compiling - vanilla SASS style
+To compile PiGrid to a compressed .scss file just run the following command:
+`sass src/index.scss route/to/wherever/some-filename.scss --style compressed`
+
+This outputs a compressed .scss file (with `.min` automatically appended), plus a source map file.
+Currently the whole system compiles down to 10k *compressed*, 16k *uncompressed* (for uncompressed just omit the `--style` flag).
+
+## Webpack setup
 For convenience this PiGrid example is built into the brilliant [tris-webpack-boilerplate](https://github.com/tr1s/tris-webpack-boilerplate) for static multi-page web builds. This includes a localhost server and live reloading, plus `-ms-` vendor prefixing to ensure the project works in dodgy browsers.
 
 The ***PiGrid*** specific files are in:
