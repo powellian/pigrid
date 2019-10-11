@@ -47,58 +47,9 @@ $gutter: calc(var(--common-size)/1.25);
 			}
 		}
 	}
-
-	// Pods - DEMO: Apply bg colours, border and drop-shad
-	.pigr-example & {
-
-		.pigr-pod {
-			@include compColours($black, 90, 5px, 75);
-			@include boxShadow();
-			justify-content: center;
-			padding: calc(var(--common-size)/3);
-			position: relative;	// this is for the ::before pseudo el's
-
-			// @mixin for example labels top-left
-			@mixin exampleLabels($bgCol: rgba(0,0,0,.45), $textCol: $white) {
-				background: $bgCol;
-				color: $textCol;
-				letter-spacing: 0.05em;
-				text-shadow: 1px 1px 0 $black;
-			}
-
-			// Add labels - auto/undefined width
-			&::before {
-				@include cta(ctaPod, -10px);
-				content: 'col-span: auto';
-				@include exampleLabels;
-			}
-
-			// Add labels - defined width e.g. pigr-row--X > pigr-pod--Y
-			@for $i from 1 through 12 {
-				&--#{$i} {
-					&::before {
-						@include cta(ctaPod, -10px);
-						content: 'col-span: #{$i}';
-						@include exampleLabels;
-					}
-				}
-			}
-
-			// NESTED row elements
-			.pigr-row {
-				padding: calc(var(--common-size)/3);
-
-				.pigr-pod {
-					@include compColours($black, 80, 5px, 60);
-				}
-			}
-
-		}
-	}
-
 }
 
-// Pods - colour-inert, for production
+// Pods
 .pigr-pod {
 	@include displayMode(flex);
 	flex-direction: column;
@@ -114,5 +65,53 @@ $gutter: calc(var(--common-size)/1.25);
 				grid-column: span $i / auto;
 			}
 		}
+	}
+}
+
+// Pods - DEMO: Apply bg colours, border and drop-shad
+.pigr-DEMO {
+
+	.pigr-pod {
+		@include compColours($black, 90, 5px, 75);
+		@include boxShadow();
+		justify-content: center;
+		padding: calc(var(--common-size)/3);
+		position: relative;	// this is for the ::before pseudo el's
+
+		// @mixin for example labels top-left
+		@mixin exampleLabels($bgCol: rgba(0,0,0,.45), $textCol: $white) {
+			background: $bgCol;
+			color: $textCol;
+			letter-spacing: 0.05em;
+			text-shadow: 1px 1px 0 $black;
+		}
+
+		// Add labels - auto/undefined width
+		&::before {
+			@include cta(ctaPod, -10px);
+			content: 'col-span: auto';
+			@include exampleLabels;
+		}
+
+		// Add labels - defined width e.g. pigr-row--X > pigr-pod--Y
+		@for $i from 1 through 12 {
+			&--#{$i} {
+				&::before {
+					@include cta(ctaPod, -10px);
+					content: 'col-span: #{$i}';
+					@include exampleLabels;
+				}
+			}
+		}
+
+		// NESTED row elements
+		.pigr-row {
+			padding: calc(var(--common-size)/3);
+
+			.pigr-pod {
+				@include compColours($black, 80, 5px, 60);
+			}
+		}
+
 	}
 }
