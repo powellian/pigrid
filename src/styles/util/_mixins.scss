@@ -17,7 +17,7 @@
   }
 }
 
-// Alt:
+// Alternatively (am running this in):
 // https://thoughtbot.com/blog/sass-content-directive
 // https://sass-lang.com/documentation/at-rules/mixin#content-blocks
 // @mixin media($width) {
@@ -30,12 +30,6 @@
   // background: red;
 // }
 
-/* e.g.: @include transition(all,2s,ease-out); ============================
-*/
-@mixin transition($what: all, $duration: 0.1s, $ease: ease-in-out) {
-  transition: $what $duration $ease;
-}
-
 /* Structural ============================
 */
 // Define display mode:
@@ -44,21 +38,35 @@
 	display: -ms-#{ $GridOrFlex };
 }
 
+// Flatten things - used for viewport in _layouts.scss
+@mixin zero-down {
+  margin: 0;
+  padding: 0;
+}
+
+// Colouring of elements
+@mixin compColours($compBgColour, $compBgOpacity, $compBorderSize, $compBorderOpacity) {
+  background-color: lighten($color: $compBgColour, $amount: $compBgOpacity);
+  border: $compBorderSize solid lighten($color: $compBgColour, $amount: $compBorderOpacity);
+}
+
+// Convenience mixin for Header and Footer elements (keeping it DRY) - Combines compColour with padding and a drop-shadow
+@mixin HeaderFooterCommon {
+  // NOTE: using var(--whatever-colour) in a mixin breaks the compiler - tried with interpolation but nada.
+  // This is being debugged for next version. Used Hex val instead.
+  // @include compColours(#{var(--deep-red)}, 50, 5px, 45);
+  @include compColours($deep-red, 50, 5px, 45);
+  padding: calc(var(--common-size)/2);
+  @include boxShadow();
+}
+
 // Add drop/box-shadow - defaults to black with zero blur, both editable params.
 @mixin boxShadow($dropColourLighten: 20, $dropParam: 1px, $blurParam: 0) {
-  box-shadow: lighten($color: #000000, $amount: $dropColourLighten) $dropParam $dropParam $blurParam;
+  box-shadow: lighten($color: $black, $amount: $dropColourLighten) $dropParam $dropParam $blurParam;
 }
 @mixin blockSpacing($spaceTop, $spaceBottom) {
   margin-top: $spaceTop;
   margin-bottom: $spaceBottom;
-}
-@mixin fill-window {
-  width: 100%;
-  height: 100%;
-}
-@mixin fill-viewport {
-  width: 100vw;
-  height: 100vh;
 }
 
 // Labels for 'pigr example' & 'grid col-span' info (set from ::before/::after))
@@ -70,7 +78,7 @@
   top: $offset;
   left: $offset;
   padding: 1px 2px;
-  box-shadow: lighten($color: #000000, $amount: 20) 1px 1px 0;
+  box-shadow: lighten($color: $black, $amount: 20) 1px 1px 0;
 
   @if $ctaName == ctaPod {
     background: lighten($color: $black, $amount: 90);
@@ -83,34 +91,6 @@
     text-shadow: black 1px 1px 1px;
     padding: 2px 3px;
     top: calc(#{$offset - 3});
-  }
-}
-
-// Typographical utilities (can be applied elswhere as req'd)
-@mixin flattenBase {
-  margin-bottom: 0;
-}
-@mixin zero-down {
-  margin: 0;
-  padding: 0;
-}
-@mixin flat-list {
-  @include zero-down;
-  list-style-type: none;
-}
-@mixin linkCommon($paddLeftRight: 1px) {
-  text-decoration: none;
-  padding: 0 $paddLeftRight;
-  color: var(--font-common-red);
-  border-bottom:  solid 1px lighten($color: $colours_common-red, $amount: 45);
-  @include transition;
-  touch-action: manipulation;
-
-  &.active--exact,
-  &:hover, &:active, &:focus {
-    color: white;
-    background: var(--font-common-red);
-    border-bottom:  solid 1px darken($color: $colours_common-red, $amount: 10);
   }
 }
 

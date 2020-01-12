@@ -1,16 +1,23 @@
 /*
-	Common global settings - can include global variables.
+	Common global settings
 */
 
-// Set variables:
-$common-size_scss: 30px;	// scss var until I can get css-vars to do math/calc() on padding etc.
+// Common colours
+$white: #ffffff;
+$black: #000000;
+$common-red: #ff0000;
+$deep-red: #990000;
 
-// otherwise, css vars:
+// Set variables - can also map inside this:
 :root{
 	--common-size: 30px;
+	--common-red: $black;
+	--deep-red: $white;
+	--common-red: $common-red;
+	--deep-red: $deep-red;
 }
 
-// Maps:
+// Maps
 $mapHeadings: (
 	h1: 28,
 	h2: 21,
