@@ -8,9 +8,10 @@
 @import './styles/base/typography';
 
 // PiGrid
-@import './styles/grid/layouts'; // Optional
+@import './styles/grid/layouts';	// Optional
 @import './styles/grid/grid';
 @import './styles/grid/v-rhythm';
+@import './styles/grid/demo';			// DEMO - safely comment this out & remove classname - layout unaffected
 
 // Components: scope - global
 @import './styles/components/global/global-header';
