@@ -1,0 +1,42 @@
+/*
+*   Header settings - Global and for PiGr
+*/
+
+// .pigr__header {
+//   .pigr-DEMO & {
+//     @include HeaderFooterCommon;
+//     margin-top: 5vh;
+//   }
+// }
+
+// Named regions
+.global {
+
+	&__header {
+		margin-top: 5vh;
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-areas:
+			"brand-image utility-nav"
+			". primary-nav"
+		;
+
+		&--midi {
+			// Mobile-up
+			max-width: map-get($map: $mapBreakpoints, $key: tabletMin);
+		}
+
+		// Header elements - unhooked from BEM purely for use as Grid named elements
+		.brand-image {
+			grid-area: brand-image;
+			width: 100px;
+			height: auto;
+			border-radius: 50%;
+		}
+		.primary-nav {
+			grid-area: primary-nav;
+		}
+		.utility-nav {
+			grid-area: utility-nav;
+		}
+	}
+}
