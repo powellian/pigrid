@@ -1,12 +1,13 @@
 # PiGrid
-![GitHub release (latest by date)](https://img.shields.io/github/v/release/powellian/pigrid)  ![GitHub](https://img.shields.io/github/license/powellian/pigrid)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/powellian/pigrid)  ![GitHub](https://img.shields.io/github/license/powellian/pigrid)  ![David](https://img.shields.io/david/powellian/pigrid)
+
 
 ***What**:*
 CSS-Grid/Flexbox grid system - [demo](https://powellian.com/pigrid/).
 A SCSS setup utilising a few loops and a bunch of settings to generate up to 12 grid-row elements, all nestable, using inline classes.  Utilises [BEM](https://css-tricks.com/bem-101/) throughout.
 
 ***How**:*
-Inspired by [Foundation](https://foundation.zurb.com/sites/docs/)/[Bootstrap](https://getbootstrap.com/docs/4.3/getting-started/introduction/) , PiGrid layout consists of an outer `container`, then `row`, then inner `pod/s`. Add the relevant classes and the SCSS will automatically apply the layout.
+Inspired by [Foundation](https://foundation.zurb.com/sites/docs/)/[Bootstrap](https://getbootstrap.com/docs/4.3/getting-started/introduction/) , PiGrid layout consists of an outer `container`, then `row`, then inner `pod/s`. Add the relevant classes and the layout will flow accordingly.
 
 `container` elements can be wrapped around the complete markup or individual blocks; width is modified via class modifiers: `--mini`, `--midi`, `--maxi`.
 There's also an optional outer wrapper class for full width/height usilising `vw/vh` attributes.
