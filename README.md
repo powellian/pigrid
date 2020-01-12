@@ -6,12 +6,12 @@ CSS-Grid/Flexbox grid system - [demo](https://powellian.com/pigrid/).
 A SCSS setup utilising a few loops and a bunch of settings to generate up to 12 grid-row elements, all nestable, using inline classes.  Utilises [BEM](https://css-tricks.com/bem-101/) throughout.
 
 ***How**:*
-Inspired by [Foundation](https://foundation.zurb.com/sites/docs/)/[Bootstrap](https://getbootstrap.com/docs/4.3/getting-started/introduction/) , PiGrid layout consists of an outer `container`, then `row`, then inner `pod`. Add the relevant classes and the SCSS will automatically apply the layout.
+Inspired by [Foundation](https://foundation.zurb.com/sites/docs/)/[Bootstrap](https://getbootstrap.com/docs/4.3/getting-started/introduction/) , PiGrid layout consists of an outer `container`, then `row`, then inner `pod/s`. Add the relevant classes and the SCSS will automatically apply the layout.
 
-`container` elements can be wrapped around the complete markup or individual blocks; width easily set via class modifiers: `--mini`, `--midi`, `--maxi`.
+`container` elements can be wrapped around the complete markup or individual blocks; width is modified via class modifiers: `--mini`, `--midi`, `--maxi`.
 There's also an optional outer wrapper class for full width/height usilising `vw/vh` attributes.
 
-The demo uses the `.pigr-example` class to apply colour to the rows and grid items (pods); remove that class and it'll be colour-inert.
+The demo uses the class `.pigr-example` to apply colour to the rows and grid items (pods); remove that class and it'll be colour-inert.
 
 Time allowing I'll make a semantic mixin library version in the style of [Bourbon/Neat](https://neat.bourbon.io/) to negate the inline classes (preferable *imho*).
 
