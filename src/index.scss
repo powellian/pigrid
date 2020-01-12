@@ -8,13 +8,13 @@
 @import './styles/base/typography';
 
 // PiGrid
-@import './styles/grid/layouts'; // Optional
+@import './styles/grid/layouts';	// Optional
 @import './styles/grid/grid';
 @import './styles/grid/v-rhythm';
+@import './styles/grid/demo';			// DEMO - safely comment this out & remove 'pigr__DEMO' classname - layout is unaffected
 
 // Components: scope - global
-@import './styles/components/global/global-header';
-@import './styles/components/global/global-footer';
+@import './styles/components/global/global__header';
 
 // Components: scope - atomic
-// @import './styles/components/atomic/'; // D.I.Y.
+// @import './styles/components/atomic/...';

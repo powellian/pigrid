@@ -5,113 +5,69 @@
 // Base settings
 $gutter: calc(var(--common-size)/1.25);
 
-// Outer container elements - width settings
-.pigr-container {
-	@include displayMode(grid);
-	grid-row-gap: $gutter;
-	padding-left: 15px;
-	padding-right: 15px;
-	margin-left: auto;
-	margin-right: auto;
+// Root BEM class - descendents within
+.pigr {
 
-	// Mapped widths ( see: $mapBreakpoints )
-	&--mini {
-		// Mobile-up
-		width: 100%;
-		max-width: map-get($map: $mapBreakpoints, $key: tabletMin);
-	}
-	&--midi {
-		max-width: map-get($map: $mapBreakpoints, $key: tabletMax);	// max-width: 1024
-	}
-	&--maxi {
-		max-width: map-get($map: $mapBreakpoints, $key: deskMax);	// max-width: 1440
-	}
-}
+	// Outer container elements - width settings
+	&__container {
+		@include displayMode(grid);
+		grid-row-gap: $gutter;
+		padding-left: 15px;
+		padding-right: 15px;
+		margin-left: auto;
+		margin-right: auto;
 
-// Rows
-.pigr-row {
-	@include displayMode(grid);
-	grid-row-gap: $gutter;
-
-	@include pigrPoint(tabletMinUp){
-		grid-column-gap: $gutter;
-	}
-
-	// Rows - auto-increment span for 12 col grid
-	@for $i from 1 through 12 {
-		&--#{$i} {
-			grid-template-columns: span auto, 1fr;
-
-			@include pigrPoint(tabletMinUp){
-				grid-template-columns: repeat($i, 1fr);
-			}
+		// Mapped widths ( see: $mapBreakpoints )
+		&--mini {
+			// Mobile-up
+			width: 100%;
+			max-width: map-get($map: $mapBreakpoints, $key: tabletMin);
+		}
+		&--midi {
+			max-width: map-get($map: $mapBreakpoints, $key: tabletMax);	// max-width: 1024
+		}
+		&--maxi {
+			max-width: map-get($map: $mapBreakpoints, $key: deskMax);	// max-width: 1440
 		}
 	}
-}
 
-// Pods
-.pigr-pod {
-	@include displayMode(flex);
-	flex-direction: column;
-	justify-content: flex-start;
+	// Rows
+	&__row {
+		@include displayMode(grid);
+		grid-row-gap: $gutter;
 
-	@for $i from 1 through 12 {
-		&--#{$i} {
-			// Mobile-up span full-width
-			grid-column: span 1 / auto;
-
-			// Tablet min up ( >768px ):
-			@include pigrPoint(tabletMinUp){
-				grid-column: span $i / auto;
-			}
-		}
-	}
-}
-
-// Pods - DEMO: Apply bg colours, border and drop-shad
-.pigr-DEMO {
-
-	.pigr-pod {
-		@include compColours($black, 90, 5px, 75);
-		@include boxShadow();
-		justify-content: center;
-		padding: calc(var(--common-size)/3);
-		position: relative;	// this is for the ::before pseudo el's
-
-		// @mixin for example labels top-left
-		@mixin exampleLabels($bgCol: rgba(0,0,0,.45), $textCol: $white) {
-			background: $bgCol;
-			color: $textCol;
-			letter-spacing: 0.05em;
-			text-shadow: 1px 1px 0 $black;
+		@include pigrPoint(tabletMinUp){
+			grid-column-gap: $gutter;
 		}
 
-		// Add labels - auto/undefined width
-		&::before {
-			@include cta(ctaPod, -10px);
-			content: 'col-span: auto';
-			@include exampleLabels;
-		}
-
-		// Add labels - defined width e.g. pigr-row--X > pigr-pod--Y
+		// Rows - auto-increment span for 12 col grid
 		@for $i from 1 through 12 {
 			&--#{$i} {
-				&::before {
-					@include cta(ctaPod, -10px);
-					content: 'col-span: #{$i}';
-					@include exampleLabels;
+				grid-template-columns: span auto, 1fr;
+
+				@include pigrPoint(tabletMinUp){
+					grid-template-columns: repeat($i, 1fr);
 				}
 			}
 		}
+	}
 
-		// NESTED row elements
-		.pigr-row {
-			padding: calc(var(--common-size)/3);
+	// Pods
+	&__pod {
+		@include displayMode(flex);
+		flex-direction: column;
+		justify-content: flex-start;
 
-			.pigr-pod {
-				@include compColours($black, 80, 5px, 60);
+		@for $i from 1 through 12 {
+			&--#{$i} {
+				// Mobile-up span full-width
+				grid-column: span 1 / auto;
+
+				// Tablet min up ( >768px ):
+				@include pigrPoint(tabletMinUp){
+					grid-column: span $i / auto;
+				}
 			}
 		}
-
 	}
 }
