@@ -4,20 +4,12 @@
 	//				also applies labels as '::before' pseudo elements
 	&__DEMO {
 
-		.pigr__header {
-			@include HeaderFooterCommon;
-    	margin-top: 5vh;
-		}
-		.pigr__footer {
-			@include HeaderFooterCommon;
-    	margin-bottom: 5vh;
-		}
-
 		.pigr__pod {
 			@include compColours($black, 90, 5px, 75);
 			@include boxShadow();
 			justify-content: center;
-			padding: calc(var(--common-size)/3);
+			// padding: calc(var(--common-size)/5);
+			padding: 0 calc(var(--common-size)/2);
 			position: relative;	// this is for the ::before pseudo el's
 
 			// @mixin for example labels top-left
@@ -48,13 +40,22 @@
 
 			// NESTED row elements
 			.pigr__row {
-				padding: calc(var(--common-size)/3);
+				padding: calc(var(--common-size)/2) 0;
 
 				.pigr__pod {
 					@include compColours($black, 80, 5px, 60);
 				}
 			}
+		}
 
+		.pigr__footer {
+			@include HeaderFooterCommon;
+			margin-bottom: calc(#{$gutter}/1.15);
+
+			// Tablet-up
+			@include pigrPoint(tabletMinUp){
+				margin-bottom: $gutter;
+			}
 		}
 	}
 }
