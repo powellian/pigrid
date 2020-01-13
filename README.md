@@ -13,7 +13,13 @@ Inspired by [Foundation](https://foundation.zurb.com/sites/docs/)/[Bootstrap](ht
 Outer `container` elements are wrapped around the complete markup or individual blocks; width is modified via class modifiers: `--mini`, `--midi`, `--maxi`. There's an optional outer wrapper class for full width/height usilising `vw/vh` attributes.  
 
 Inner `row` blocks indicate the divisible aspect of the content pods.  
-For example, when using `pigr__row--6`, the inner pods could be: `pigr__pod--1` and `pigr__pod--5` -- or 3x `pigr__pod--1` and `pigr__pod--2`-- or 3x `pigr__pod--1` and `pigr__pod--2` etc. Omitting the leads to auto-sizing elements.
+For example, when using `pigr__row--6`, the inner pods could be:  
+- `pigr__pod--1` and `pigr__pod--5`  
+- 3x `pigr__pod--2`
+- 3x `pigr__pod--1` and `pigr__pod--3`  
+
+etc...  
+Omitting the pod size leads to the elements auto-sizing.
 
 The demo uses the class `.pigr__DEMO` to apply colour to the rows and grid items (pods).  
 Remove that class and it'll be colour-inert, but the layout stays intact.
