@@ -10,12 +10,15 @@ A newly added `<header>` uses named `grid-template-areas`, seperate from the res
 ***How**:*
 Inspired by [Foundation](https://foundation.zurb.com/sites/docs/)/[Bootstrap](https://getbootstrap.com/docs/4.3/getting-started/introduction/) , PiGrid layout consists of an outer `container`, then `row`, then inner `pod/s`. Add the relevant classes and the layout will flow accordingly.
 
-`container` elements can be wrapped around the complete markup or individual blocks; width is modified via class modifiers: `--mini`, `--midi`, `--maxi`.
-There's also an optional outer wrapper class for full width/height usilising `vw/vh` attributes.
+Outer `container` elements are wrapped around the complete markup or individual blocks; width is modified via class modifiers: `--mini`, `--midi`, `--maxi`. There's an optional outer wrapper class for full width/height usilising `vw/vh` attributes.  
 
-The demo uses the class `.pigr-example` to apply colour to the rows and grid items (pods); remove that class and it'll be colour-inert.
+Inner `row` blocks indicate the divisible aspect of the content pods.  
+For example, when using `pigr__row--6`, the inner pods could be: `pigr__pod--1` and `pigr__pod--5` -- or 3x `pigr__pod--1` and `pigr__pod--2`-- or 3x `pigr__pod--1` and `pigr__pod--2` etc. Omitting the leads to auto-sizing elements.
 
-Time allowing I'll make a semantic mixin library version in the style of [Bourbon/Neat](https://neat.bourbon.io/) to negate the inline classes (preferable *imho*).
+The demo uses the class `.pigr__DEMO` to apply colour to the rows and grid items (pods).  
+Remove that class and it'll be colour-inert, but the layout stays intact.
+
+For future versions I'll make a semantic mixin library version in the style of [Bourbon/Neat](https://neat.bourbon.io/) to negate the inline classes (preferable *imho*).
 
 ***QA**:*
 Tested iteratively from ground-up in all decent modern browsers, with Firefox and Chrome device emulators used extensively throughout.
@@ -32,7 +35,7 @@ To compile PiGrid to a compressed .scss file just run the following command:
 This outputs a compressed .scss file (with `.min` automatically appended), plus a source map file.
 Currently the whole system compiles down to 10k *compressed*, 16k *uncompressed* (for uncompressed just omit the `--style` flag).
 
-## Webpack setup
+## Webpack setup - Dev build in localhost with maps and live-reload; Production build task.
 For convenience this PiGrid example is built into the brilliant [tris-webpack-boilerplate](https://github.com/tr1s/tris-webpack-boilerplate) for static multi-page web builds. This includes a localhost server and live reloading, plus `-ms-` vendor prefixing to ensure the project works in dodgy browsers.
 
 The ***PiGrid*** specific files are in:
