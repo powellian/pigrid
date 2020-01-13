@@ -12,7 +12,8 @@ Inspired by [Foundation](https://foundation.zurb.com/sites/docs/)/[Bootstrap](ht
 
 Outer `container` elements are wrapped around the complete markup or individual blocks; width is modified via class modifiers: `--mini`, `--midi`, `--maxi`. There's an optional outer wrapper class for full width/height usilising `vw/vh` attributes.  
 
-Inner `row` blocks indicate the divisible aspect of the content pods e.g.: `pigr__row pigr__row--N`- where N is the grid _fraction_ (`fr`), for the child `pod`s.  
+Inner `row` blocks indicate the divisible aspect of the content pods e.g.:  
+`pigr__row pigr__row--N`- where N is the grid _fraction_ (`fr`), for the child `pod`s.  
 
 Content `pod`s use the following: `pigr__pod pigr__pod--N` - where N is the grid _fraction_ (`fr`) denoted on the parent `row`.  
 
