@@ -2,12 +2,12 @@
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/powellian/pigrid)  ![GitHub](https://img.shields.io/github/license/powellian/pigrid)  ![David](https://img.shields.io/david/powellian/pigrid)
 
 
-***What**:*
+***What**:*  
 CSS-Grid/Flexbox grid system - **[Demo](https://powellian.com/pigrid/demos/)**.  
 A SCSS setup utilising a few loops and a bunch of settings to generate up to 12 grid-row elements, all nestable, using inline classes.  Utilises [BEM](https://css-tricks.com/bem-101/) throughout.  
 A newly added `<header>` uses named `grid-template-areas`, seperate from the rest of the grid.
 
-***How**:*
+***How**:*  
 Inspired by [Foundation](https://foundation.zurb.com/sites/docs/)/[Bootstrap](https://getbootstrap.com/docs/4.3/getting-started/introduction/) , PiGrid layout consists of an outer `container`, then `row`, then inner `pod/s`. Add the relevant classes and the layout will flow accordingly.
 
 Outer `container` elements are wrapped around the complete markup or individual blocks; width is modified via class modifiers: `--mini`, `--midi`, `--maxi`. There's an optional outer wrapper class for full width/height usilising `vw/vh` attributes.  
@@ -31,7 +31,7 @@ Remove that class and it'll be colour-inert, but the layout stays intact.
 
 For future versions I'll make a semantic mixin library version in the style of [Bourbon/Neat](https://neat.bourbon.io/) to negate the inline classes (preferable *imho*).
 
-***QA**:*
+***QA**:*  
 Tested iteratively from ground-up in all decent modern browsers, with Firefox and Chrome device emulators used extensively throughout.
 Remote/mobile device testing for [Chrome/Android](https://developers.google.com/web/tools/chrome-devtools/remote-debugging) and [Safari/iPhone](https://www.kenst.com/2019/03/how-to-debug-problems-on-mobile-safari/) used occasionally.
 No testing on 'actual' tablet hardware - will do when kit is available.
