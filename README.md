@@ -13,15 +13,20 @@ Inspired by [Foundation](https://foundation.zurb.com/sites/docs/)/[Bootstrap](ht
 Outer `container` elements are wrapped around the complete markup or individual blocks; width is modified via class modifiers: `--mini`, `--midi`, `--maxi`. There's an optional outer wrapper class for full width/height usilising `vw/vh` attributes.  
 
 Inner `row` blocks indicate the divisible aspect of the content pods.  
+
+Content `pod`s use the following: `pigr__pod pigr__pod--N` - where N is the grid _fraction_ (`fr`), within the parent `row`.  
+
 For example, when using `pigr__row--6`, the inner pods could be:  
-- `pigr__pod--1` and `pigr__pod--5`  
-- 3x `pigr__pod--2`
-- 3x `pigr__pod--1` and `pigr__pod--3`  
+- `pigr__row pigr__pod--1` and `pigr__row pigr__pod--5`  
+- 3x `pigr__row pigr__pod--2`
+- 3x `pigr__row pigr__pod--1` and `pigr__row pigr__pod--3`  
 
 etc...  
-Omitting the pod size leads to the elements auto-sizing.
 
-The demo uses the class `.pigr__DEMO` to apply colour to the rows and grid items (pods).  
+Omitting the pod size leads to the elements _auto-sizing_ in the available space, based on the sizing dictated by the parent row element. For example within `pigr__row--6`:
+- 5x `pigr__pod` and 1x `pigr__pod--2`  
+
+The **Demo** uses the class `.pigr__DEMO` to apply colour to the rows and grid items (pods).  
 Remove that class and it'll be colour-inert, but the layout stays intact.
 
 For future versions I'll make a semantic mixin library version in the style of [Bourbon/Neat](https://neat.bourbon.io/) to negate the inline classes (preferable *imho*).
