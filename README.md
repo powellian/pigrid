@@ -38,7 +38,7 @@ Remote/mobile device testing for [Chrome/Android](https://developers.google.com/
 No testing on 'actual' tablet hardware - will do when kit is available.
 
 Edge 16+ tested intermittently in Browserstack, needs more (in progress). The new Edge Chromium renders it perfectly (at last they've made a proper browser).  
-In the process of testing 'Exploder' down to version 10.
+Currently not working in IE 'Exploder' 11 - working on this.
 
 ## Compiling - vanilla SASS style
 To compile PiGrid to a compressed .scss file just run the following command:
