@@ -25,7 +25,7 @@ For example, when using `pigr__row pigr__row--6`, the inner pods could be:
 etc...
 
 Omitting the pod size leads to the elements _auto-sizing_ in the available space, based on the sizing dictated by the parent row element. For example within `pigr__row--6`:
-- 5x `pigr__pod` and 1x `pigr__pod--2`
+- 4x `pigr__pod` and 1x `pigr__pod--2`
 
 The **Demo** uses the class `.pigr__DEMO` to apply colour to the rows and grid items (pods).
 Remove that class and it'll be colour-inert, but the layout stays intact.
