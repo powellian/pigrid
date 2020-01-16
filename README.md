@@ -39,7 +39,7 @@ No testing on 'actual' tablet hardware - will do when kit is available.
 
 Edge 16+ tested intermittently in Browserstack, needs more (in progress).  
 The new Edge Chromium renders it perfectly.  
-Currently **not** working in I-E-*xploder* 11 - am working on this.
+Currently it blows up in I-E-*xploder* 11 - am working on this.
 
 ## Compiling - vanilla SASS style
 To compile PiGrid to a compressed .scss file just run the following command:
