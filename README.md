@@ -37,9 +37,9 @@ Tested iteratively from ground-up in all decent modern browsers, with Firefox an
 Remote/mobile device testing for [Chrome/Android](https://developers.google.com/web/tools/chrome-devtools/remote-debugging) and [Safari/iPhone](https://www.kenst.com/2019/03/how-to-debug-problems-on-mobile-safari/) used occasionally.
 No testing on 'actual' tablet hardware - will do when kit is available.
 
-Edge 16+ tested intermittently in Browserstack, needs more (in progress). The new Edge Chromium renders it perfectly (at last they've made a proper browser).  
-
-Currently not working in I-E-*xploder* 11 - working on this.
+Edge 16+ tested intermittently in Browserstack, needs more (in progress).  
+The new Edge Chromium renders it perfectly.  
+Currently **not** working in I-E-*xploder* 11 - am working on this.
 
 ## Compiling - vanilla SASS style
 To compile PiGrid to a compressed .scss file just run the following command:
