@@ -18,9 +18,10 @@ Inner `row` blocks indicate the divisible aspect of the content pods e.g.:
 Content `pod`s use the following: `pigr__pod pigr__pod--N` - where N is the grid _fraction_ (`fr`) denoted on the parent `row`.
 
 For example, when using `pigr__row pigr__row--6`, the inner pods could be:
-- `pigr__row pigr__pod--1` and `pigr__row pigr__pod--5`
-- 3x `pigr__row pigr__pod--2`
-- 3x `pigr__row pigr__pod--1` and `pigr__row pigr__pod--3`
+- `pigr__row pigr__pod--1` *and* `pigr__row pigr__pod--5`
+- *3x* `pigr__row pigr__pod--2`
+- *3x* `pigr__row pigr__pod--1` *and* `pigr__row pigr__pod--3`
+- `pigr__row pigr__pod--2` *and 1x* `pigr__row` *and 1x* `pigr__row pigr__pod--3`
 
 etc...
 
