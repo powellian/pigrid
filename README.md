@@ -39,7 +39,7 @@ No testing on 'actual' tablet hardware - will do when kit is available.
 
 Edge 16+ tested intermittently in Browserstack, needs more (in progress).  
 The new Edge Chromium renders it perfectly.  
-**Currently it blows up in I-E*xploder* 11 - am working on this.**. 
+**Currently it blows up in I-E*xploder* 11 - am working on this.**  
 No IE testing or support for anything earlier than v11.
 
 ## Compiling - vanilla SASS style
