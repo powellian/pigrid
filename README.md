@@ -32,22 +32,15 @@ Remove that class and it'll be colour-inert, but the layout stays intact.
 
 For future versions I'll make a semantic mixin library version in the style of [Bourbon/Neat](https://neat.bourbon.io/) to negate the inline classes (preferable *imho*).
 
-***QA**:*
-Tested iteratively from ground-up in all decent modern browsers, with Firefox and Chrome device emulators used extensively throughout.
-Remote/mobile device testing for [Chrome/Android](https://developers.google.com/web/tools/chrome-devtools/remote-debugging) and [Safari/iPhone](https://www.kenst.com/2019/03/how-to-debug-problems-on-mobile-safari/) used occasionally.
-No testing on 'actual' tablet hardware - will do when kit is available.
+***QA:***  
+Tested iteratively from ground-up in all decent modern browsers, with Firefox and Chrome device emulators used extensively throughout.  
+Mobile testing done in Android: Firefox & Chrome and iOS: Safari.  
+Tablet devices mostly tested in emulators - will more do as/when kit is available.
 
+The new Edge Chromium renders perfectly.  
 Edge 16+ tested intermittently in Browserstack, needs more (in progress).  
-The new Edge Chromium renders it perfectly.  
 **Currently it blows up in I-E*xploder* 11 - am working on this.**  
 No IE testing or support for anything earlier than v11.
-
-## Compiling - vanilla SASS style
-To compile PiGrid to a compressed .scss file just run the following command:
-`sass src/index.scss route/to/wherever/some-filename.scss --style compressed`
-
-This outputs a compressed .scss file (with `.min` automatically appended), plus a source map file.
-Currently the whole system compiles down to 10k *compressed*, 16k *uncompressed* (for uncompressed just omit the `--style` flag).
 
 ## Webpack setup - Dev build in localhost with maps and live-reload; Production build task.
 For convenience this PiGrid example is built into the brilliant [tris-webpack-boilerplate](https://github.com/tr1s/tris-webpack-boilerplate) for static multi-page web builds. This includes a localhost server and live reloading, plus `-ms-` vendor prefixing to ensure the project works in dodgy browsers.
@@ -69,5 +62,12 @@ You'll need [git](https://git-scm.com/) and [node.js](https://nodejs.org/) on yo
 4.  `npm start` - fires up *localhost:8080* and live reloading for development
 
 5. `npm run build` creates a `./dist` folder with all website assets optimized and compressed.
+
+## Compiling - vanilla SASS style
+To compile PiGrid to a compressed .scss file just run the following command:
+`sass src/index.scss route/to/wherever/some-filename.scss --style compressed`
+
+This outputs a compressed .scss file (with `.min` automatically appended), plus a source map file.
+Currently the whole system compiles down to 10k *compressed*, 16k *uncompressed* (for uncompressed just omit the `--style` flag).  
 
 Fill 'yer boots!
