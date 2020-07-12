@@ -60,7 +60,7 @@ $gutter: calc(var(--common-size)/1.25);
 
 		@for $i from 1 through 12 {
 			&--#{$i} {
-				// Mobile-up span full-width
+				// Mobile span full-width
 				grid-column: span 1 / auto;
 
 				// Tablet min up ( >768px ):
