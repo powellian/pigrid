@@ -1,91 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <title>PiGrid - a CSS Grid / Flexbox system.</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="Description" content="PiGrid - a CSS Grid / Flexbox system.">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css.map" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,500&display=swap", rel="stylesheet" />
-    <style>
-      .brand-image {
-        max-width: 60px;
-        max-height: 60px;
-      }
-    </style>
+<head>
+  <meta charset="UTF-8">
+  <title>PiGrid - a CSS Grid / Flexbox system.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="Description" content="PiGrid - a CSS Grid / Flexbox system.">
 
-    <!-- Open Graph data / Facebook Card data -->
-    <meta property="og:title" content="PiGrid - a CSS Grid / Flexbox system.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://github.com/powellian/pigrid">
-    <meta property="og:image" content="https://placekitten.com/408/287">
-    <meta property="og:image:alt" content="A fluffy kitten.">
-    <meta property="og:description" content="PiGrid - a CSS Grid / Flexbox system. Release #01, a W.I.P.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css.map" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,500&display=swap" ,
+    rel="stylesheet" />
+  <style>
+    .brand-image {
+      max-width: 60px;
+      max-height: 60px;
+    }
+  </style>
 
-    <!-- Twitter Card data -->
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:creator" content="@powellian">
+  <!-- Open Graph data / Facebook Card data -->
+  <meta property="og:title" content="PiGrid - a CSS Grid / Flexbox system.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://github.com/powellian/pigrid">
+  <meta property="og:image" content="https://placekitten.com/408/287">
+  <meta property="og:image:alt" content="A fluffy kitten.">
+  <meta property="og:description" content="PiGrid - a CSS Grid / Flexbox system. Release #01, a W.I.P.">
 
-    <!-- Mobile header color for Chrome, Firefox OS and Opera -->
-    <meta name="theme-color" content="#ff0000">
-    <!-- Mobile header color Windows Phone -->
-    <meta name="msapplication-navbutton-color" content="#ff0000">
-    <!-- Mobile header color for iOS Safari (supports black, black-translucent or default) -->
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  </head>
+  <!-- Twitter Card data -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:creator" content="@powellian">
 
-  <body>
-    <div class="pigr__container pigr__container--midi pigr__DEMO">
-      <!-- Header: css-grid named elements -->
-      <header class="pigr__row global__header">
-        <a href="#" class="homelink">
-          <svg width="512" height="512" class="brand-image" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><title>Brand logo</title><desc>A lovely brand logo image.</desc><defs><path id="a" d="M0 0h512v512H0z"/></defs><g fill="none" fill-rule="evenodd"><image width="512" height="512" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGN5fIAKQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAMKADAAQAAAABAAAAMAAAAAD4/042AAAAjUlEQVRoBe3SwQnAMBDEwFz6bzU1JJAW5mEO5L8WW/I8M++1+NyL7/5fvQecLliBCqCBvhAKZLwCrBAHKoACGa8AK8SBCqBAxivACnGgAiiQ8QqwQhyoAApkvAKsEAcqgAIZrwArxIEKoEDGK8AKcaACKJDxCrBCHKgACmS8AqwQByqAAhmvACvEgfUFPsFWAk7W/bXvAAAAAElFTkSuQmCC"/><use fill="#C8102E" xlink:href="#a"/></g></svg>
-        </a>
-        <ul class="utility-nav">
-          <li><a href="">Login</a></li>
-        </ul>
-        <ul class="primary-nav">
-          <li><a href="">Link A</a></li>
-          <li><a href="">Link B</a></li>
-          <li><a href="">Link C</a></li>
-          <li><a href="">Link D</a></li>
-        </ul>
-      </header>
-      <div class="pigr__row pigr__row--6">
-        <div class="pigr__pod pigr__pod--4"><p>Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic.</p></div>
-        <div class="pigr__pod pigr__pod--2"><p>Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic.</p></div>
+  <!-- Mobile header color for Chrome, Firefox OS and Opera -->
+  <meta name="theme-color" content="#ff0000">
+  <!-- Mobile header color Windows Phone -->
+  <meta name="msapplication-navbutton-color" content="#ff0000">
+  <!-- Mobile header color for iOS Safari (supports black, black-translucent or default) -->
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+</head>
+
+<body>
+  <div class="pigr__container pigr__container--midi pigr__DEMO">
+    <!-- Header: css-grid named elements -->
+    <header class="pigr__row global__header">
+      <a href="#" class="homelink">
+        <svg width="512" height="512" class="brand-image" xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink">
+          <title>Brand logo</title>
+          <desc>A lovely brand logo image.</desc>
+          <defs>
+            <path id="a" d="M0 0h512v512H0z" />
+          </defs>
+          <g fill="none" fill-rule="evenodd">
+            <image width="512" height="512"
+              xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGN5fIAKQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAMKADAAQAAAABAAAAMAAAAAD4/042AAAAjUlEQVRoBe3SwQnAMBDEwFz6bzU1JJAW5mEO5L8WW/I8M++1+NyL7/5fvQecLliBCqCBvhAKZLwCrBAHKoACGa8AK8SBCqBAxivACnGgAiiQ8QqwQhyoAApkvAKsEAcqgAIZrwArxIEKoEDGK8AKcaACKJDxCrBCHKgACmS8AqwQByqAAhmvACvEgfUFPsFWAk7W/bXvAAAAAElFTkSuQmCC" />
+            <use fill="#C8102E" xlink:href="#a" />
+          </g>
+        </svg>
+      </a>
+      <ul class="utility-nav">
+        <li><a href="">Login</a></li>
+      </ul>
+      <ul class="primary-nav">
+        <li><a href="">Link A</a></li>
+        <li><a href="">Link B</a></li>
+        <li><a href="">Link C</a></li>
+        <li><a href="">Link D</a></li>
+      </ul>
+    </header>
+    <div class="pigr__row pigr__row--6">
+      <div class="pigr__pod pigr__pod--4">
+        <p>Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo
+          melon azuki bean garlic.</p>
       </div>
-      <div class="pigr__row pigr__row--6">
-        <div class="pigr__pod pigr__pod--1"><p>Kielbasa ipsum dolor amet landjaeger shoulder filet mignon.</p></div>
-        <div class="pigr__pod pigr__pod--5">
-          <!-- Nested -->
-          <div class="pigr__row pigr__row--3">
-            <div class="pigr__pod"><p>Chilli Red</p></div>
-            <div class="pigr__pod"><p>Chilli</p></div>
-            <div class="pigr__pod"><p>Chilli</p></div>
-            <div class="pigr__pod"><p>Chilli Green</p></div>
-            <div class="pigr__pod pigr__pod--2"><p>Scotch Bonnet</p></div>
+      <div class="pigr__pod pigr__pod--2">
+        <p>Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo
+          melon azuki bean garlic.</p>
+      </div>
+    </div>
+    <div class="pigr__row pigr__row--6">
+      <div class="pigr__pod pigr__pod--1">
+        <p>Kielbasa ipsum dolor amet landjaeger shoulder filet mignon.</p>
+      </div>
+      <div class="pigr__pod pigr__pod--5">
+        <!-- Nested -->
+        <div class="pigr__row pigr__row--3">
+          <div class="pigr__pod">
+            <p>Chilli Red</p>
+          </div>
+          <div class="pigr__pod">
+            <p>Chilli</p>
+          </div>
+          <div class="pigr__pod">
+            <p>Chilli</p>
+          </div>
+          <div class="pigr__pod">
+            <p>Chilli Green</p>
+          </div>
+          <div class="pigr__pod pigr__pod--2">
+            <p>Scotch Bonnet</p>
           </div>
         </div>
       </div>
-      <div class="pigr__row pigr__row--6">
-        <div class="pigr__pod"><p>Chilli Red</p></div>
-        <div class="pigr__pod"><p>Chilli</p></div>
-        <div class="pigr__pod"><p>Chilli</p></div>
-        <div class="pigr__pod"><p>Chilli Green</p></div>
-        <div class="pigr__pod"><p>Chilli</p></div>
-        <div class="pigr__pod"><p>Scotch Bonnet</p></div>
-      </div>
-      <div class="pigr__row">
-        <div class="pigr__pod"><p>Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic.</p></div>
-      </div>
-      <footer class="pigr__row pigr__row--3 pigr__footer">
-        <div class="pigr__pod"><p>A Spicy jalapeno bacon ipsum dolor amet landjaeger shoulder filet mignon kielbasa cupim short loin bresaola ribeye sirloin, salami drumstick pork jerky pancetta.</p></div>
-        <div class="pigr__pod"><p>A Spicy jalapeno bacon ipsum dolor amet landjaeger shoulder filet mignon kielbasa cupim short loin bresaola ribeye sirloin, salami drumstick pork jerky pancetta.</p></div>
-        <div class="pigr__pod"><p>A Spicy jalapeno bacon ipsum dolor amet landjaeger shoulder filet mignon kielbasa cupim short loin bresaola ribeye sirloin, salami drumstick pork jerky pancetta.</p></div>
-      </footer>
     </div>
-  </body>
+    <div class="pigr__row pigr__row--6">
+      <div class="pigr__pod">
+        <p>Chilli Red</p>
+      </div>
+      <div class="pigr__pod">
+        <p>Chilli</p>
+      </div>
+      <div class="pigr__pod">
+        <p>Chilli</p>
+      </div>
+      <div class="pigr__pod">
+        <p>Chilli Green</p>
+      </div>
+      <div class="pigr__pod">
+        <p>Chilli</p>
+      </div>
+      <div class="pigr__pod">
+        <p>Scotch Bonnet</p>
+      </div>
+    </div>
+    <div class="pigr__row">
+      <div class="pigr__pod">
+        <p>Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo
+          melon azuki bean garlic.</p>
+      </div>
+    </div>
+    <footer class="pigr__row pigr__row--3 pigr__footer">
+      <div class="pigr__pod">
+        <p>A Spicy jalapeno bacon ipsum dolor amet landjaeger shoulder filet mignon kielbasa cupim short loin bresaola
+          ribeye sirloin, salami drumstick pork jerky pancetta.</p>
+      </div>
+      <div class="pigr__pod">
+        <p>A Spicy jalapeno bacon ipsum dolor amet landjaeger shoulder filet mignon kielbasa cupim short loin bresaola
+          ribeye sirloin, salami drumstick pork jerky pancetta.</p>
+      </div>
+      <div class="pigr__pod">
+        <p>A Spicy jalapeno bacon ipsum dolor amet landjaeger shoulder filet mignon kielbasa cupim short loin bresaola
+          ribeye sirloin, salami drumstick pork jerky pancetta.</p>
+      </div>
+    </footer>
+  </div>
+</body>
+
 </html>
