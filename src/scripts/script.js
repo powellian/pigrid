@@ -9,3 +9,5 @@ console.log('%c Coded by: https://tris.codes 💠', 'background: lavenderblush; 
 // console.log(`sq-root.js: ${squareRoot.square(350)}`); // 122500
 // console.log(`sq-root.js: ${squareRoot.diag(27, 58).toFixed(3)}`); // 63.XYZ
 // squareRoot.default;
+
+// import
