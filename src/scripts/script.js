@@ -10,4 +10,4 @@ console.log('%c Coded by: https://tris.codes 💠', 'background: lavenderblush; 
 // console.log(`sq-root.js: ${squareRoot.diag(27, 58).toFixed(3)}`); // 63.XYZ
 // squareRoot.default;
 
-// import
+import './pi-modules/index'
