@@ -7,9 +7,10 @@ $white: #ffffff;
 $black: #000000;
 $common-red: #ff0000;
 $deep-red: #990000;
+$common-green: #006400;
 
 // Set variables - can also map inside this:
-:root{
+:root {
 	--common-size: 30px;
 	--common-red: $black;
 	--deep-red: $white;
@@ -18,18 +19,15 @@ $deep-red: #990000;
 }
 
 // Maps
-$mapHeadings: (
-	h1: 28,
+$mapHeadings: (h1: 28,
 	h2: 21,
 	h3: 20,
 	h4: 18,
 	h5: 16,
-	h6: 14
-);
+	h6: 14);
 
 // Breakpoints - ref: http://screensiz.es
-$mapBreakpoints: (
-	zero: 0,
+$mapBreakpoints: (zero: 0,
 	mobMini: 220px,
 	mobMin: 320px,
 	mobMax: 640px,

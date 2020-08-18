@@ -7,7 +7,7 @@
 // addSomeContent.default('btnWrite2', 'subEl2');
 // addSomeContent.addContent('btnWrite1', 'subEl1');
 
-import './gradient-loops/index';
+import './gradient-block/index';
 // import theGradients from './gradient-loops/index';
 
 // import * as theGradientsImported from './gradient-loops/index';
@@ -17,13 +17,14 @@ import './gradient-loops/index';
 // import {
 // 	theGradients
 // } from './gradient-loops/index';
-// theGradients('.gradient-loop__inner');
+// theGradients('.gradient-block .pigr__pod');
 
-// import
-// aBananna as
-// default from './gradient-loops/index';
 
-// import { theGradElements} from './gradient-loops/index';
+import {
+	// gradElements('.gradient-block .pigr__pod');
+	// eslint-disable-next-line no-unused-vars
+	gradElements
+} from './gradient-block/index';
 // import theGradElements as
-// default from './gradient-loops/index';
+// default from './gradient-block/index';
 // theGradElements();

@@ -27,18 +27,19 @@
 				transition: all .15s ease;
 
 				// Tablet-up
-				@include pigrPoint(tabletMinUp){
+				@include pigrPoint(tabletMinUp) {
 					width: 90px;
 				}
 			}
 
-			&:hover  {
+			&:hover {
 				.brand-image {
 					border-top-right-radius: 40%;
 					border-bottom-left-radius: 40%;
 				}
 			}
 		}
+
 		.primary-nav,
 		.utility-nav {
 			list-style-type: none;
@@ -51,20 +52,24 @@
 				margin-right: 10px;
 				line-height: 1.1;
 
-				&:last-child { margin-right: 0; }
+				&:last-child {
+					margin-right: 0;
+				}
 			}
+
 			a {
 				font-size: 110%;
 				color: #222;
 			}
 		}
-		.primary-nav {
-			grid-area: primary-nav;
-			align-self: end;
-		}
-		.utility-nav {
-			grid-area: utility-nav;
-			align-self: center;
-		}
+
+		// .primary-nav {
+		// 	grid-area: primary-nav;
+		// 	align-self: end;
+		// }
+		// .utility-nav {
+		// 	grid-area: utility-nav;
+		// 	align-self: center;
+		// }
 	}
 }
