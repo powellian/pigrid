@@ -10,7 +10,7 @@
 /** WORKS WITH: THIS WORKS IN ISOLATION */
 // import './gradient-block/index';
 
-import * as theGradients from './gradient-block/index';
+import * as theGradients from './gradient-block';
 theGradients.default();
 
 // import * as theGradientsImported from './gradient-loops/index';

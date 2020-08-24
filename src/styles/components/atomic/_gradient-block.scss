@@ -8,24 +8,26 @@ $bg-grad-green: $common-green;
 $grad-steps: 6;
 
 .gradient-block .pigr__pod {
-	p {
-		color: $white;
-	}
+    p {
+        color: $white;
+    }
 }
 
 // STEPS: CHANGE COLOUR
 // Using mix() function to change colour accross the items:
 @for $i from 0 to $grad-steps {
-
-	.pigr__pod.gradient-block__inner--0#{$i} {
-		background: mix($bg-grad-red, $bg-grad-green, percentage($i / ($grad-steps - 1)));
-	}
+    .pigr__pod.gradient-block__inner--0#{$i} {
+        background: mix(
+            $bg-grad-red,
+            $bg-grad-green,
+            percentage($i / ($grad-steps - 1))
+        );
+    }
 }
 
 // ref:
 // https://subscription.packtpub.com/book/web_development/9781849694544/4/ch04lvl1sec45/the-mix-function
 // https://stackoverflow.com/questions/30487340/sass-for-loop-from-one-color-to-another-color
-
 
 // GRAD STEPS: SAME COLOUR
 // @for $i from 0 to $grad-steps {

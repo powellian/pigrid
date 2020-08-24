@@ -1,8 +1,12 @@
 /*
 		Typographic specific settings here.
 */
-$font-family_fallback: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-$font-family_full: 'Roboto', $font-family_fallback;
+$font-family_fallback: 'Helvetica Neue',
+Helvetica,
+Arial,
+sans-serif;
+$font-family_full: 'Roboto',
+$font-family_fallback;
 $font-size_common: 15;
 $font-weight_common: 400;
 $font-weight_heavy: 500;
@@ -15,12 +19,15 @@ body {
 }
 
 // map headings - h1/.h1 etc...
-@each $heading, $size in $mapHeadings {
+@each $heading,
+$size in $mapHeadings {
+
   #{$heading},
   .#{$heading} {
     font-size: rem-calc($size);
-    margin-top: 0;
-    margin-bottom: calc(var(--common-size) / 3);
+    // margin-top: 0;
+    margin-top: calc(var(--common-size) / 2);
+    margin-bottom: calc(var(--common-size) / 4);
   }
 }
 
@@ -28,6 +35,7 @@ p,
 li {
   color: lighten($color: $black, $amount: 25);
 }
+
 p {
   .pigr-pod & {
     margin: 0;
