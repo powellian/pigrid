@@ -1,0 +1,39 @@
+/*
+	Gradient blocks
+*/
+
+$bg-grad-base: #990000;
+
+.gradient-block .pigr__pod {
+	background-color: $bg-grad-base;
+
+	p {
+		color: $white;
+	}
+}
+
+// A high number - will silently ignore if it is greater than targeted amount
+@for $i from 1 to 12 {
+
+	.pigr__pod.gradient-block__inner--0#{$i} {
+
+		// Nest it inside relevant parent:
+		.gradient-block & {
+
+			// BOTH of these work:
+			// background-color: lighten($bg-grad-base, $i * 10%);
+			background-color: lighten($color: $bg-grad-base, $amount: #{$i}*10);
+		}
+	}
+}
+
+// @mix()
+$color-1: red;
+$color-2: blue;
+$steps: 5;
+
+@for $i from 0 to $steps {
+	.class-#{$i + 1} {
+		background: mix($color-1, $color-2, percentage($i / ($steps - 1)));
+	}
+}

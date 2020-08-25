@@ -1,0 +1,152 @@
+/* Media queries ============================
+*/
+// My tweak to this: https://itnext.io/writing-media-queries-with-sass-mixins-3ea591ea3ea4
+// My addition: mapping and camelCasing.
+// example: @include pigrPoint(mobMaxUp) { ... }
+@mixin pigrPoint($size) {
+  @if $size==mobMaxUp {
+    @media (min-width: 0) and (max-width: map-get($map: $mapBreakpoints, $key: mobMax)) {
+      @content;
+    }
+  }
+
+  @else if $size==tabletMinUp {
+    @media (min-width: map-get($map: $mapBreakpoints, $key: tabletMin)) {
+      @content;
+    }
+  }
+
+  @else if $size==tabletMaxUp {
+    @media (min-width: map-get($map: $mapBreakpoints, $key: tabletMax)) {
+      @content;
+    }
+  }
+
+  @else if $size==deskMinUp {
+    @media (min-width: map-get($map: $mapBreakpoints, $key: deskMin)) {
+      @content;
+    }
+  }
+
+  @else if $size==deskMaxUp {
+    @media (min-width: map-get($map: $mapBreakpoints, $key: deskMax)) {
+      @content;
+    }
+  }
+}
+
+// TODO: Alternatively (am running this in):
+// https://thoughtbot.com/blog/sass-content-directive
+// https://sass-lang.com/documentation/at-rules/mixin#content-blocks
+// @mixin media($width) {
+//   @media only screen and (min-width: map-get($map: $mapBreakpoints, $key: $width)) {
+//     @content;
+//   }
+// }
+// example (use with the breakpoints map):
+// @include media(mobMin) {
+// background: red;
+// }
+
+/* Structural ============================
+*/
+// Define display mode:
+@mixin displayMode ($GridOrFlex) {
+  display: $GridOrFlex;
+  display: -ms-#{ $GridOrFlex };
+}
+
+// Flatten things - used for viewport in _layouts.scss
+@mixin zero-down {
+  margin: 0;
+  padding: 0;
+}
+
+// Colouring of elements
+@mixin compColours($compBgColour, $compBgOpacity, $compBorderSize, $compBorderOpacity) {
+  background-color: lighten($compBgColour, $compBgOpacity);
+  border: $compBorderSize solid lighten($compBgColour, $compBorderOpacity);
+}
+
+// Convenience mixin for Header and Footer elements (keeping it DRY) - Combines compColour with padding and a drop-shadow
+@mixin HeaderFooterCommon {
+  // TODO: using var(--whatever-colour) in a mixin breaks the compiler - tried with interpolation but nada.
+  // This is being debugged for next version. Used Hex val instead.
+  // @include compColours(#{var(--deep-red)}, 50, 5px, 45);
+  @include compColours($deep-red, 50, 5px, 45);
+  padding: calc(var(--common-size)/2);
+  @include boxShadow();
+}
+
+// Add drop/box-shadow - defaults to black with zero blur, both editable params.
+@mixin boxShadow($dropColourLighten: 20, $dropParam: 1px, $blurParam: 0) {
+  box-shadow: lighten($black, $dropColourLighten) $dropParam $dropParam $blurParam;
+}
+
+@mixin blockSpacing($spaceTop, $spaceBottom) {
+  margin-top: $spaceTop;
+  margin-bottom: $spaceBottom;
+}
+
+// @mixin for example labels top-left
+@mixin exampleLabels() {
+  color: $white;
+  letter-spacing: 0.05em;
+  line-height: 1.1;
+  font-size: 80%;
+  text-shadow: 1px 1px 0 $black;
+  padding: 1px 2px;
+  box-shadow: lighten($black, 20) 1px 1px 0;
+}
+
+// Labels for 'pigr example' & 'grid col-span' info (set from ::before/::after))
+// syntax: @mixin cta($ctaName, $vertical, $offset) {
+@mixin cta($ctaName, $offset) {
+  @include exampleLabels;
+  position: absolute;
+  top: $offset;
+  left: $offset;
+
+  @if $ctaName==ctaPod {
+    background: rgba(0, 0, 0, .5);
+  }
+
+  @else if $ctaName==ctaTitle {
+    background: rgba(153, 0, 0, .75);
+    padding: 1px 5px;
+  }
+}
+
+// Zurb Foundation rem-calc function: https://gist.github.com/kylewebdev/f36acbfd2e9257d88253
+$rem-base: 16px;
+
+@function strip-unit($num) {
+  @return $num / ($num * 0 + 1);
+}
+
+@function convert-to-rem($value, $base-value: $rem-base) {
+  $value: strip-unit($value) / strip-unit($base-value) * 1rem;
+
+  @if ($value==0rem) {
+    $value: 0;
+  }
+
+  // Turn 0rem into 0
+  @return $value;
+}
+
+@function rem-calc($values, $base-value: $rem-base) {
+  $max: length($values);
+
+  @if $max==1 {
+    @return convert-to-rem(nth($values, 1), $base-value);
+  }
+
+  $remValues: ();
+
+  @for $i from 1 through $max {
+    $remValues: append($remValues, convert-to-rem(nth($values, $i), $base-value));
+  }
+
+  @return $remValues;
+}

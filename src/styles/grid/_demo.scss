@@ -1,0 +1,63 @@
+.pigr {
+
+  // DEMO:	applies bg colours, border and drop-shad, typographical settings
+  //				also applies labels as '::before' pseudo elements
+  &__DEMO {
+
+    // NESTED row elements
+    .pigr__row {
+      position: relative;
+      border: solid 2px lighten(#000, 95);
+      padding: calc(var(--common-size) / 2);
+
+      // Add labels - auto/undefined width
+      &::before {
+        @include exampleLabels;
+        @include cta(ctaTitle, -10px);
+        content: 'row';
+      }
+
+      &--nested {
+        .pigr__pod {
+          @include compColours($black, 80, 5px, 50);
+        }
+      }
+    }
+
+    .pigr__pod {
+      position: relative; // this is for pseudo ::before
+      @include compColours($black, 90, 5px, 75);
+      @include boxShadow();
+      justify-content: center;
+      padding: calc(var(--common-size) / 2);
+
+      // Add labels - auto/undefined width
+      &::before {
+        @include exampleLabels;
+        @include cta(ctaPod, -12px);
+        content: 'col-span: auto';
+      }
+
+      // Add labels - defined width e.g. pigr__row--X > pigr__pod--Y
+      @for $i from 1 through 12 {
+        &--#{$i} {
+          &::before {
+            @include cta(ctaPod, -12px);
+            @include exampleLabels;
+            content: 'col-span: #{$i}';
+          }
+        }
+      }
+    }
+
+    .pigr__footer {
+      @include HeaderFooterCommon;
+      margin-bottom: calc(#{$gutter}/ 1.15);
+
+      // Tablet-up
+      @include pigrPoint(tabletMinUp) {
+        margin-bottom: $gutter;
+      }
+    }
+  }
+}
