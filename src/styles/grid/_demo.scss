@@ -1,63 +1,63 @@
 .pigr {
 
-	// DEMO:	applies bg colours, border and drop-shad, typographical settings
-	//				also applies labels as '::before' pseudo elements
-	&__DEMO {
+  // DEMO:	applies bg colours, border and drop-shad, typographical settings
+  //				also applies labels as '::before' pseudo elements
+  &__DEMO {
 
-		// NESTED row elements
-		.pigr__row {
-			padding: calc(var(--common-size)/2) 0;
+    // NESTED row elements
+    .pigr__row {
+      position: relative;
+      border: solid 2px lighten(#000, 95);
+      padding: calc(var(--common-size) / 2);
 
-			&--nested {
-				.pigr__pod {
-					@include compColours($black, 80, 5px, 50);
-				}
-			}
-		}
+      // Add labels - auto/undefined width
+      &::before {
+        @include exampleLabels;
+        @include cta(ctaTitle, -10px);
+        content: 'row';
+      }
 
-		.pigr__pod {
-			@include compColours($black, 90, 5px, 75);
-			@include boxShadow();
-			justify-content: center;
-			// padding: calc(var(--common-size)/5);
-			padding: 0 calc(var(--common-size)/2);
-			position: relative; // this is for the ::before pseudo el's
+      &--nested {
+        .pigr__pod {
+          @include compColours($black, 80, 5px, 50);
+        }
+      }
+    }
 
-			// @mixin for example labels top-left
-			@mixin exampleLabels($bgCol: rgba(0, 0, 0, .45), $textCol: $white) {
-				background: $bgCol;
-				color: $textCol;
-				letter-spacing: 0.05em;
-				text-shadow: 1px 1px 0 $black;
-			}
+    .pigr__pod {
+      position: relative; // this is for pseudo ::before
+      @include compColours($black, 90, 5px, 75);
+      @include boxShadow();
+      justify-content: center;
+      padding: calc(var(--common-size) / 2);
 
-			// Add labels - auto/undefined width
-			&::before {
-				@include cta(ctaPod, -10px);
-				content: 'col-span: auto';
-				@include exampleLabels;
-			}
+      // Add labels - auto/undefined width
+      &::before {
+        @include exampleLabels;
+        @include cta(ctaPod, -12px);
+        content: 'col-span: auto';
+      }
 
-			// Add labels - defined width e.g. pigr__row--X > pigr__pod--Y
-			@for $i from 1 through 12 {
-				&--#{$i} {
-					&::before {
-						@include cta(ctaPod, -10px);
-						content: 'col-span: #{$i}';
-						@include exampleLabels;
-					}
-				}
-			}
-		}
+      // Add labels - defined width e.g. pigr__row--X > pigr__pod--Y
+      @for $i from 1 through 12 {
+        &--#{$i} {
+          &::before {
+            @include cta(ctaPod, -12px);
+            @include exampleLabels;
+            content: 'col-span: #{$i}';
+          }
+        }
+      }
+    }
 
-		.pigr__footer {
-			@include HeaderFooterCommon;
-			margin-bottom: calc(#{$gutter}/1.15);
+    .pigr__footer {
+      @include HeaderFooterCommon;
+      margin-bottom: calc(#{$gutter}/ 1.15);
 
-			// Tablet-up
-			@include pigrPoint(tabletMinUp) {
-				margin-bottom: $gutter;
-			}
-		}
-	}
+      // Tablet-up
+      @include pigrPoint(tabletMinUp) {
+        margin-bottom: $gutter;
+      }
+    }
+  }
 }

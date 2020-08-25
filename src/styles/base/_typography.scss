@@ -25,10 +25,13 @@ $size in $mapHeadings {
   #{$heading},
   .#{$heading} {
     font-size: rem-calc($size);
-    // margin-top: 0;
     margin-top: calc(var(--common-size) / 2);
     margin-bottom: calc(var(--common-size) / 4);
   }
+}
+
+p {
+  margin: 0;
 }
 
 p,
