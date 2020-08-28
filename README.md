@@ -29,18 +29,17 @@ etc...
 Omitting the pod size leads to the elements _auto-sizing_ in the available space, based on the sizing dictated by the parent row element. For example within `pigr__row--6`:
 - 4x `pigr__pod` and 1x `pigr__row pigr__pod--2`
 
-**_QA:_**
+**_QA:_**  
 Tested iteratively from ground-up in all decent modern browsers, with Firefox and Chrome device emulators used extensively throughout.
 Mobile testing done in Android: Firefox & Chrome and iOS: Safari.
 Tablet devices mostly tested in emulators.
 
 The new Edge Chromium renders perfectly.
-Edge 16+ tested intermittently in Browserstack, needs more (in progress).
-**Currently breaks in IE11 - am working on this.**
-No IE testing or support for anything earlier than v11.
+Edge 16+ tested intermittently in Browserstack, needs more (in progress).  
+**Currently breaks a bit in IE11 - am working on this.**  
+Nothing pre-IE11.
 
-## Webpack setup - Dev build in localhost with maps and live-reload; Production build task.
-
+## Webpack setup  
 For convenience this PiGrid example is built into [tris-webpack-boilerplate](https://github.com/tr1s/tris-webpack-boilerplate) for static multi-page web builds.
 
 The **_PiGrid_** specific files are in:
@@ -62,7 +61,7 @@ You'll need [git](https://git-scm.com/) and [node.js](https://nodejs.org/) on yo
 
 5. `npm run build` creates a `./dist` folder with all website assets optimized and compressed.
 
-## Compiling - vanilla SASS style
+## Compiling - vanilla SASS style  
 To compile PiGrid to a compressed .scss file just run the following command:
 `sass src/index.scss route/to/wherever/some-filename.scss --style compressed`
 
